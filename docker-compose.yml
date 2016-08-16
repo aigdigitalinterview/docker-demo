@@ -1,0 +1,23 @@
+version: '2'
+services:
+  product:
+    build: product-service/.
+    ports:
+     - "9091:9091"
+    depends_on:
+     - db
+    links:
+     - db
+  order:
+    build: order-service/.
+    ports:
+     - "9092:9092"
+    depends_on:
+     - db
+     - product
+    links:
+     - db
+  db:
+    image: postgres
+    expose:
+      - "5432"
