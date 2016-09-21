@@ -1,13 +1,11 @@
 version: '2'
 services:
   product:
-    build: 
-      context: https://github.com/aigdigitalinterview/product-service
+    image: aigdigital/product-service-ketul:latest
     ports:
      - "9091:9091"
   order:
-    build: 
-      context: https://github.com/aigdigitalinterview/order-service
+    image: aigdigital/order-service-ketul:latest
     ports:
      - "9092:9092"
     depends_on:
