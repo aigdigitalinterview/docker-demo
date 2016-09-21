@@ -1,11 +1,13 @@
 version: '2'
 services:
   product:
-    build: product-service/.
+    build: 
+      context: https://github.com/aigdigitalinterview/product-service
     ports:
      - "9091:9091"
   order:
-    build: order-service/.
+    build: 
+      context: https://github.com/aigdigitalinterview/order-service
     ports:
      - "9092:9092"
     depends_on:
